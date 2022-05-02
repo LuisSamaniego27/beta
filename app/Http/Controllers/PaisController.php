@@ -10,7 +10,7 @@ class PaisController extends Controller
 {
     public function index()
     {
-        $paises = Pais::paginate(10);
+        $paises = Pais::paginate();
 
         return view('pais.index', compact('paises'))
             ->with('i', (request()->input('page', 1) - 1) * $paises->perPage());
