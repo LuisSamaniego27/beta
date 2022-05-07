@@ -1,26 +1,25 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Update Libro
+    Create Estado
 @endsection
 
 @section('content')
     <section class="content container-fluid">
-        <div class="">
+        <div class="row">
             <div class="col-md-12">
 
                 @includeif('partials.errors')
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Actualizar Pais</span>
+                        <span class="card-title">Crear Estado</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('paises.update', $pais->ID_PAIS) }}"  role="form" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
+                        <form method="POST" action="{{ route('estados.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('pais.form')
+                            @include('estado.form')
 
                         </form>
                     </div>

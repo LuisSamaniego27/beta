@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Pais</span>
+                        <span class="card-title">Actualizar Pais</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('paises.update', $pais->ID_PAIS) }}"  role="form" enctype="multipart/form-data">

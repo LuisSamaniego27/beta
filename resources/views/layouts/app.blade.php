@@ -37,11 +37,16 @@
                     @if (Auth::check())
                     <ul class="navbar-nav me-auto">
                         <a class="nav-link" href="{{ route('paises.index') }}">{{ __('Paises') }}</a>
+                        <a class="nav-link" href="{{ route('estados.index') }}">{{ __('Estados') }}</a>
                     </ul>
+                    
                     @endif
+
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -76,11 +81,11 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+            </div>        
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            @yield('content')jjj
         </main>
     </div>
 </body>

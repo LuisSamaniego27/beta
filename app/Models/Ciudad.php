@@ -5,21 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pais extends Model
+class Ciudad extends Model
 {
-
     static $rules = [
-		'NOMBRE_PAIS' => 'required',
+		'NOMBRE_CIUDAD ' => 'required',
 		'STATUS' => 'required',
     ];
 
     protected $perPage = 1000;
 
-    protected $table = 'GEO_PAIS';
+    protected $table = 'GEO_CIUDAD';
     protected $fillable = ['title'];
     
     public $timestamps = false;
-    protected $primaryKey = 'ID_PAIS';
+    protected $primaryKey = 'ID_CIUDAD';
 
-    
+    //la unificacion con la clave foranea
+    public function estados(){
+      return $this->belongsTo('App\Estado', 'ID_ESTADO');
+  }
 }

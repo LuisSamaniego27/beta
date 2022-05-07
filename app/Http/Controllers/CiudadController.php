@@ -3,28 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pais;
+use App\Models\Ciudad;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class PaisController extends Controller
+class CiudadController extends Controller
 {
     public function index()
     {
-        $paises = Pais::paginate();
+        $ciudades = Ciudad::paginate();
 
-        return view('pais.index', compact('paises'))
-            ->with('i', (request()->input('page', 1) - 1) * $paises->perPage());
+        return view('ciudad.index', compact('ciudades'))
+            ->with('i', (request()->input('page', 1) - 1) * $ciudades->perPage());
     }
 
     public function create()
     {
-        $pais = new Pais();
-        return view('pais.create', compact('pais'));
+        $ciudad = new Ciudad();
+        return view('ciudad.create', compact('ciudad'));
     }
 
-    public function store(Request $request)
+    /* public function store(Request $request)
     {
-        request()->validate(Pais::$rules);
+        request()->validate(Ciudad::$rules);
 
         //$pais = Pais::create($request->all());
         $pais = new Pais();
@@ -36,7 +37,9 @@ class PaisController extends Controller
         $pais->save();
 
         return redirect()->route('paises.index')
-            ->with('success', 'Pais creada exitosamente');
+            ->with('success', 'Pais creado exitosamente(femenino)
+
+            Buscar esto en G.');
     }
 
     public function show($id)
@@ -75,5 +78,5 @@ class PaisController extends Controller
 
         return redirect()->route('paises.index')
             ->with('success', 'Pais eliminado con exito');
-    }
+    } */
 }
