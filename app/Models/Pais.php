@@ -21,5 +21,7 @@ class Pais extends Model
     public $timestamps = false;
     protected $primaryKey = 'ID_PAIS';
 
-    
+    public function estados(){
+      return $this->hasMany(Estado::class);
+    }
 }

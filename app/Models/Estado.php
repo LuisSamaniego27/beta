@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Estado extends Model
 {
+  
     static $rules = [
-		'NOMBRE_ESTADO ' => 'required',
+		//'NOMBRE_ESTADO' => 'required|unique:GEO_ESTADO,NOMBRE_ESTADO',
+    'NOMBRE_ESTADO' => 'required',
 		'STATUS' => 'required',
     ];
 
@@ -23,5 +25,5 @@ class Estado extends Model
     //la unificacion con la clave foranea
     public function paises(){
       return $this->belongsTo('App\Pais', 'ID_PAIS');
-  }
+    }
 }

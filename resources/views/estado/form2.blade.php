@@ -15,10 +15,20 @@
         <div class="form-group">
             {{ Form::label('ID_PAIS') }}
            <!--  {{ Form::select('ID_PAIS', $paises, null, ['class' => 'form-control']) }} -->
+
            <div class="col-auto">
                 <select id="ID_PAIS" name="ID_PAIS" class="form-control" > 
                     @foreach($paises as $pais)
+                        
+                            @if ($pais->ID_PAIS == $estado->ID_PAIS)
                                 <option value="{{$pais->ID_PAIS}}" selected>{{$pais->NOMBRE_PAIS}}</option>
+                                @break
+                            @else
+                                <option value="{{$pais->ID_PAIS}}" selected>{{$pais->NOMBRE_PAIS}}</option>
+                            @endif
+                          
+
+                        
                     @endforeach   
                 </select>
             </div>
@@ -27,7 +37,7 @@
     </div>
 
     <div class="box-footer mt20">
-    <a href="{{ route('estados.index') }}" class="btn btn-secondary" tabindex="2">Cancelar</a>
+        <a href="{{ route('estados.index') }}" class="btn btn-secondary" tabindex="2">Cancelar</a>
         <button type="submit" class="btn btn-primary" tabindex="3">Guardar</button>
 
     </div>

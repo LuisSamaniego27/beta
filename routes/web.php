@@ -22,7 +22,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('paises', App\Http\Controllers\PaisController::class)->middleware('auth');
 Route::resource('estados', App\Http\Controllers\EstadoController::class)->middleware('auth');
-Route::resource('ciudades', App\Http\Controllers\CiudadController::class)->middleware('auth');
+
 
 
 

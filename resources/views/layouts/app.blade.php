@@ -85,7 +85,7 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')jjj
+            @yield('content')
         </main>
     </div>
 </body>
