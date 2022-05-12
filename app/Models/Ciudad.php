@@ -19,6 +19,7 @@ class Ciudad extends Model
     
     public $timestamps = false;
     protected $primaryKey = 'ID_CIUDAD';
+    
 
     //la unificacion con la clave foranea
     public function estados(){
