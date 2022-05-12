@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Pais
+    Preinscribir
 @endsection
 
 @section('content')
@@ -13,13 +13,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Crear Pais</span>
+                        <span class="card-title">Preinscribir</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('paises.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('preinscripciones.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('pais.form')
+                            @include('preinscripcion.form')
 
                         </form>
                     </div>
@@ -28,3 +28,4 @@
         </div>
     </section>
 @endsection
+

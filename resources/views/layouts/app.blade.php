@@ -38,6 +38,7 @@
                     <ul class="navbar-nav me-auto">
                         <a class="nav-link" href="{{ route('paises.index') }}">{{ __('Paises') }}</a>
                         <a class="nav-link" href="{{ route('estados.index') }}">{{ __('Estados') }}</a>
+                        <a class="nav-link" href="{{ route('preinscripciones.index') }}">{{ __('Preinscripcion') }}</a>
                     </ul>
                     
                     @endif

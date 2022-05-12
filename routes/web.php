@@ -22,6 +22,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('paises', App\Http\Controllers\PaisController::class)->middleware('auth');
 Route::resource('estados', App\Http\Controllers\EstadoController::class)->middleware('auth');
+Route::resource('preinscripciones', App\Http\Controllers\PreinscripcionController::class)->middleware('auth');
+
+Route::get('/mapa', function () {
+    return view('preinscripcion.mapa');
+ });
 
 
 

@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Pais
+    Preinscripcion
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+
+  <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -13,14 +14,14 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Pais') }}
+                                {{ __('Preinscripcion') }}
                             </span>
 
-                             <div class="float-right">
-                                <a href="{{ route('paises.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear Nuevo') }}
+                            <div class="float-right">
+                                <a href="{{ route('preinscripciones.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                  {{ __('Preinscribir') }}
                                 </a>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -36,24 +37,26 @@
                                     <tr>
                                         <th>No</th>
                                         
+										<th>Cedula</th>
 										<th>Nombre</th>
-										<th>Estado</th>
+                                        <th>Apellido</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($paises as $pais)
+                                    @foreach ($preinscripciones as $preinscripcion)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $pais->NOMBRE_PAIS }}</td>
-											<td>{{ $pais->STATUS }}</td>
+											<td>{{ $preinscripcion->DOCUMENTO }}</td>
+											<td>{{ $preinscripcion->NOMBRE_HIJO }}</td>
+                                            <td>{{ $preinscripcion->APELLIDO_HIJO }}</td>
 
                                             <td>
-                                                <form action="{{ route('paises.destroy',$pais->ID_PAIS) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('paises.show',$pais->ID_PAIS) }}"><i class="fa fa-fw fa-eye"></i> Detalle</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('paises.edit',$pais->ID_PAIS) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <form action="{{ route('preinscripciones.destroy',$preinscripcion->ID_PAIS) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.show',$preinscripcion->ID_PAIS) }}"><i class="fa fa-fw fa-eye"></i> Detalle</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('preinscripciones.edit',$preinscripcion->ID_PAIS) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
@@ -66,8 +69,18 @@
                         </div>
                     </div>
                 </div>
-                {!! $paises->links() !!}
+                {!! $preinscripciones->links() !!}    
+
             </div>
+            
         </div>
     </div>
+
+
+
+    
+      
 @endsection
+
+
+ 
