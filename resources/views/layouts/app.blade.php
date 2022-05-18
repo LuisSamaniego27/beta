@@ -39,6 +39,7 @@
                         <a class="nav-link" href="{{ route('paises.index') }}">{{ __('Paises') }}</a>
                         <a class="nav-link" href="{{ route('estados.index') }}">{{ __('Estados') }}</a>
                         <a class="nav-link" href="{{ route('preinscripciones.index') }}">{{ __('Preinscripcion') }}</a>
+                        <a class="nav-link" href="{{ route('barrios.index') }}">{{ __('Barrios') }}</a>
                     </ul>
                     
                     @endif
