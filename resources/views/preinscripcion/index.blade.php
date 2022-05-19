@@ -54,9 +54,9 @@
                                             <td>{{ $preinscripcion->APELLIDO_HIJO }}</td>
 
                                             <td>
-                                                <form action="{{ route('preinscripciones.destroy',$preinscripcion->ID_PAIS) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.show',$preinscripcion->ID_PAIS) }}"><i class="fa fa-fw fa-eye"></i> Detalle</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('preinscripciones.edit',$preinscripcion->ID_PAIS) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <form action="{{ route('preinscripciones.destroy',$preinscripcion->DOCUMENTO) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.show',$preinscripcion->DOCUMENTO) }}"><i class="fa fa-fw fa-eye"></i> Detalle</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('preinscripciones.edit',$preinscripcion->DOCUMENTO) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>

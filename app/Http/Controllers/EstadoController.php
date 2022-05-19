@@ -12,7 +12,9 @@ class EstadoController extends Controller
 {
     public function index()
     {
-        $estados = Estado::paginate();
+        
+        $estados = Estado::orderBy('DATETIME', 'desc')->paginate();
+       
 
         return view('estado.index', compact('estados'))
             ->with('i', (request()->input('page', 1) - 1) * $estados->perPage());
@@ -40,8 +42,6 @@ class EstadoController extends Controller
         $date = $date->format('Ymd H:i:s');
         $estado->DATETIME = $date;
         $estado->save();
-
-        dd($date);
 
         return redirect()->route('estados.index')
             ->with('success', 'Estado creado exitosamente');
