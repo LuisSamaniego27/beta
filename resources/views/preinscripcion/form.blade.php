@@ -1,3 +1,9 @@
+        <!-- DATOS HIJO -->
+        <div class="form-group">
+            {{ Form::label('DOCUMENTO') }}
+            {{ Form::number('DOCUMENTO', $preinscripcion->DOCUMENTO, ['class' => 'form-control' . ($errors->has('DOCUMENTO') ? ' is-invalid' : ''), 'placeholder' => 'Cedula']) }}
+            {!! $errors->first('DOCUMENTO', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
         <div class="form-group">
             {{ Form::label('NOMBRE_HIJO') }}
             {{ Form::text('NOMBRE_HIJO', $preinscripcion->NOMBRE_HIJO, ['class' => 'form-control' . ($errors->has('NOMBRE_HIJO') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
@@ -13,14 +19,32 @@
             {{ Form::date('FECHA_NAC', $preinscripcion->FECHA_NAC, ['class' => 'form-control' . ($errors->has('FECHA_NAC') ? ' is-invalid' : ''), 'placeholder' => 'Apellido']) }}
             {!! $errors->first('FECHA_NAC', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        <!-- DATOS PADRE -->
+        <div class="form-group">
+            {{ Form::label('NOMBRE_PADRE') }}
+            {{ Form::text('NOMBRE_PADRE', $preinscripcion->NOMBRE_PADRE, ['class' => 'form-control' . ($errors->has('NOMBRE_PADRE') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
+            {!! $errors->first('NOMBRE_PAIS', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('APELLIDO_PADRE') }}
+            {{ Form::text('APELLIDO_PADRE', $preinscripcion->APELLIDO_PADRE, ['class' => 'form-control' . ($errors->has('APELLIDO_PADRE') ? ' is-invalid' : ''), 'placeholder' => 'Apellido']) }}
+            {!! $errors->first('APELLIDO_PADRE', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
         
         
-
+        <div class="form-group">
+            {{ Form::label('STATUS') }}
+            {{ Form::text('STATUS', $preinscripcion->STATUS, ['class' => 'form-control' . ($errors->has('STATUS') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
+            {!! $errors->first('STATUS', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        
+        
+        <!-- DATOS MAPA -->
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="latitud">Latitud</label>
-                    <input type="text" id="latitud" class="form-control">
+                    <label for="latitud">LATITUD</label>
+                    <input id="LATITUD" name="LATITUD" type="text"  class="form-control">
                 </div>
             </div>
         </div>
@@ -28,8 +52,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="longitud">Longitud</label>
-                    <input type="text" id="longitud" class="form-control">
+                    <label for="longitud">LONGITUD</label>
+                    <input id="LONGITUD" name="LONGITUD" type="text" class="form-control">
                 </div>
             </div>
         </div>
@@ -96,8 +120,8 @@
                 marker.addListener( 'dragend', function (event)
                 {
                     //escribimos las coordenadas de la posicion actual del marcador dentro del input #coords
-                    document.getElementById("latitud").value = this.getPosition().lat();
-                    document.getElementById("longitud").value = this.getPosition().lng();
+                    document.getElementById("LATITUD").value = this.getPosition().lat();
+                    document.getElementById("LONGITUD").value = this.getPosition().lng();
                 });
             }
 

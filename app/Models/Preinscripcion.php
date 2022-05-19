@@ -7,14 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Preinscripcion extends Model
 {
-    
+  static $rules = [
+		'NOMBRE_PADRE' => 'required',
+		'STATUS' => 'required',
+    ];
+
     protected $perPage = 1000;
 
     protected $table = 'TANAK_PREINSCRIPCION';
     protected $fillable = ['title'];
     
     public $timestamps = false;
-    protected $primaryKey = 'ID_PREINSCRIPCION';
+    protected $primaryKey = 'DOCUMENTO';
 
     /* public function estados(){
       return $this->hasMany(Estado::class);
