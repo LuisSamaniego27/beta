@@ -44,9 +44,11 @@ class BarrioController extends Controller
      * @param  \App\Models\Barrio  $barrio
      * @return \Illuminate\Http\Response
      */
-    public function show(Barrio $barrio)
+    public function show($id)
     {
-        //
+        $barrio = barrio::find($id);
+
+        return view('barrio.show', compact('barrio'));
     }
 
     /**
