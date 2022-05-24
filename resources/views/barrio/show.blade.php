@@ -24,6 +24,22 @@
                             <strong>Nombre:</strong>
                             {{ $barrio->NOMBRE_BARRIO }}
                         </div>
+
+                        <div class="card-body">
+                    
+                        <div class="form-group">
+                            
+                         @foreach($ciudades as $ciudad)
+                        
+                            @if ($ciudad->ID_CIUDAD == $barrio->ID_CIUDAD)
+                                <strong>Ciudad:</strong>
+                                {{ $ciudad->NOMBRE_CIUDAD }}
+                                @break
+                            @endif
+                        
+                        @endforeach   
+                        </div>
+                       
                         <div class="form-group">
                             <strong>Estado:</strong>
                             {{ $barrio->STATUS }}

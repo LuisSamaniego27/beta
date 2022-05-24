@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barrio;
+use App\Models\Ciudad;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -46,9 +47,11 @@ class BarrioController extends Controller
      */
     public function show($id)
     {
-        $barrio = barrio::find($id);
 
-        return view('barrio.show', compact('barrio'));
+        $barrio = barrio::find($id);
+        $ciudades = Ciudad::all();
+
+        return view('barrio.show', compact('barrio', 'ciudades'));
     }
 
     /**
@@ -80,8 +83,11 @@ class BarrioController extends Controller
      * @param  \App\Models\Barrio  $barrio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Barrio $barrio)
+    public function destroy($id)
     {
-        //
+        $barrio = Barrio::find($id)->delete();
+
+        return redirect()->route('barrio.index')
+            ->with('success', 'Barrio eliminado con exito');
     }
 }
