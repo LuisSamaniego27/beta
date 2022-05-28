@@ -25,7 +25,7 @@
                             {{ $pais->NOMBRE_PAIS }}
                         </div>
                         <div class="form-group">
-                            <strong>Precio:</strong>
+                            <strong>Estado:</strong>
                             {{ $pais->STATUS }}
                         </div>
 

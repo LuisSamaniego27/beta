@@ -35,8 +35,6 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>N°</th>
-                                        <th>Id Barrio</th>
-                                        <th>Ciudad</th>
 										<th>Nombre Barrio</th>
 										<th>Estado</th>
 
@@ -44,11 +42,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+ 
                                     @foreach ($barrios as $barrio)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            <td>{{ $barrio->ID_BARRIO }}</td>
-											<td>{{ $barrio->ID_CIUDAD }}</td>
 											<td>{{ $barrio->NOMBRE_BARRIO }}</td>
                                             <td>{{ $barrio->STATUS }}</td>
 
@@ -58,7 +55,7 @@
                                                     <a class="btn btn-sm btn-success" href="{{ route('barrios.edit',$barrio->ID_BARRIO) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
+                                                        <button type="submit" onclick="return confirm ('¿Estas seguro que desea borrar?')" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -21,4 +21,7 @@ class Barrio extends Model
     public $timestamps = false;
     protected $primaryKey = 'ID_BARRIO';
     
+    public function barrios(){
+      return $this->belongsTo('App\Ciudad', 'ID_Ciudad');
+    }
 }

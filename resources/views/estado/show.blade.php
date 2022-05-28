@@ -26,12 +26,14 @@
                         </div>
                         <div class="form-group">
                             
-                        @foreach($paises as $pais)
+                         @foreach($paises as $pais)
+                        
                             @if ($pais->ID_PAIS == $estado->ID_PAIS)
                                 <strong>Pais:</strong>
                                 {{ $pais->NOMBRE_PAIS }}
                                 @break
                             @endif
+                        
                         @endforeach   
                         </div>
                         <div class="form-group">
