@@ -44,6 +44,13 @@ class PreinscripcionController extends Controller
         $preinscripcion->STATUS = $request->get('STATUS');
         $preinscripcion->save();
 
+
+        /* CREAR CODIGO JS Y HACER LA COMPARACION */
+
+        /* REALIZA EL SELECT DE TODAS LAS CAPILLAS  */
+
+        /* AGG ID_SOCIEDADES A LA TABLA PREISNCRIPCION */
+
         
         return redirect()->route('preinscripciones.index')
             ->with('success', 'Preinscripcion creada exitosamente');
