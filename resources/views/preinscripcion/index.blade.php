@@ -23,11 +23,7 @@
                                 </a>
                             </div>
 
-                            <div class="float-right">
-                                <a href="{{ route('preinscripciones.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Inscribir') }}
-                                </a>
-                            </div>
+                            
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
