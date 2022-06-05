@@ -60,9 +60,12 @@ class BarrioController extends Controller
      * @param  \App\Models\Barrio  $barrio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Barrio $barrio)
+    public function edit($id)
     {
-        //
+        $barrio = Barrio::find($id);
+        $ciudades = Ciudad::all();
+
+        return view('barrio.edit', compact('barrio', 'ciudades'));
     }
 
     /**
@@ -72,9 +75,17 @@ class BarrioController extends Controller
      * @param  \App\Models\Barrio  $barrio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Barrio $barrio)
+    public function update(Request $request, $id)
     {
-        //
+        request()->validate(Barrio::$rules);
+        $barrio = Barrio::find($id);
+        $barrio->ID_ESTADO = $request->get('ID_ESTADO');
+        $barrio->NOMBRE_CIUDAD = $request->get('NOMBRE_CIUDAD');
+        $barrio->STATUS = $request->get('STATUS');
+        $barrio->save();
+
+        return redirect()->route('barrio.index')
+            ->with('success', 'País actualizado con éxito');
     }
 
     /**

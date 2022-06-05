@@ -13,10 +13,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Actualizar Barrios/span>
+                        <span class="card-title">Actualizar Barrios</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('paises.update', $pais->ID_PAIS) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('barrios.update', $barrio->ID_BARRIO) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
