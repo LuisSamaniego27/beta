@@ -1,7 +1,7 @@
         <!-- DATOS HIJO -->
         <div class="form-group">
             {{ Form::label('DOCUMENTO') }}
-            {{ Form::number('DOCUMENTO', $preinscripcion->DOCUMENTO, ['class' => 'form-control' . ($errors->has('DOCUMENTO') ? ' is-invalid' : ''), 'placeholder' => 'Cedula']) }}
+            {{ Form::number('DOCUMENTO', $preinscripcion->DOCUMENTO, ['class' => 'form-control' . ($errors->has('DOCUMENTO') ? ' is-invalid' : ''), 'placeholder' => 'Cedula del hijo']) }}
             {!! $errors->first('DOCUMENTO', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -20,7 +20,7 @@
             {!! $errors->first('FECHA_NAC', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <!-- DATOS PADRE -->
-        <div class="form-group">
+        <!-- <div class="form-group">
             {{ Form::label('NOMBRE_PADRE') }}
             {{ Form::text('NOMBRE_PADRE', $preinscripcion->NOMBRE_PADRE, ['class' => 'form-control' . ($errors->has('NOMBRE_PADRE') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('NOMBRE_PAIS', '<div class="invalid-feedback">:message</div>') !!}
@@ -37,10 +37,15 @@
             {{ Form::text('STATUS', $preinscripcion->STATUS, ['class' => 'form-control' . ($errors->has('STATUS') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
             {!! $errors->first('STATUS', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-        
+         -->
+
+         <a href="">Ingresar los datos del padre</a>
+         
+
+         
         
         <!-- DATOS MAPA -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="latitud">LATITUD</label>
@@ -63,7 +68,7 @@
                 <div id="map" style="width: 100%; height: 500px;"></div>
             </div>
         </div>
-
+ -->
         <div class="box-footer mt20">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
