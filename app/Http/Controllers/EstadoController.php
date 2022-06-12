@@ -12,10 +12,8 @@ class EstadoController extends Controller
 {
     public function index()
     {
-        
         $estados = Estado::orderBy('DATETIME', 'desc')->paginate();
        
-
         return view('estado.index', compact('estados'))
             ->with('i', (request()->input('page', 1) - 1) * $estados->perPage());
     }

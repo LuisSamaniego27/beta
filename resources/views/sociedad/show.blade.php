@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $paises->name ?? 'Show Pais' }}
+    {{ $sociedades->name ?? 'Show Sociedad' }}
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Pais</span>
+                            <span class="card-title">Show Sociedad</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('paises.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('sociedades.index') }}"> Back</a>
                         </div>
                     </div>
 
@@ -22,11 +22,15 @@
                         
                         <div class="form-group">
                             <strong>Nombre:</strong>
-                            {{ $pais->NOMBRE_PAIS }}
+                            {{ $sociedad->NOMBRE_SOCIEDAD }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Direccion:</strong>
+                            {{ $sociedad->DIRECCION }}
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $pais->STATUS }}
+                            {{ $sociedad->STATUS }}
                         </div>
 
                     </div>

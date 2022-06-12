@@ -36,8 +36,10 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nombre</th>
+										<th>Nombre Parroquia</th>
 										<th>Estado</th>
+                                        <th>Latitud</th>
+                                        <th>Longitud</th>
 
                                         <th></th>
                                     </tr>
@@ -49,6 +51,8 @@
                                             
 											<td>{{ $sociedad->NOMBRE_SOCIEDAD }}</td>
 											<td>{{ $sociedad->STATUS }}</td>
+                                            <td>{{ $sociedad->LATITUD }}</td>
+                                            <td>{{ $sociedad->LONGITUD }}</td>
 
                                             <td>
                                                 <form action="{{ route('sociedades.destroy',$sociedad->ID_SOCIEDAD) }}" method="POST">

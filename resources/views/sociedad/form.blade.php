@@ -12,6 +12,12 @@
             {!! $errors->first('STATUS', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            {{ Form::label('DIRECCION') }}
+            {{ Form::text('DIRECCION', $sociedad->DIRECCION, ['class' => 'form-control' . ($errors->has('DIRECCION') ? ' is-invalid' : ''), 'placeholder' => 'DIRECCION']) }}
+            {!! $errors->first('DIRECCION', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+
+        <div class="form-group">
             {{ Form::label('LATITUD') }}
             {{ Form::text('LATITUD', $sociedad->LATITUD, ['class' => 'form-control' . ($errors->has('LATITUD') ? ' is-invalid' : ''), 'placeholder' => 'LATITUD']) }}
             {!! $errors->first('LATITUD', '<div class="invalid-feedback">:message</div>') !!}

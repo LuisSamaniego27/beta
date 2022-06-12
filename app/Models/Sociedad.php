@@ -19,4 +19,9 @@ class Sociedad extends Model
     
     public $timestamps = false;
     protected $primaryKey = 'ID_SOCIEDAD';
+
+    //la unificacion con la clave foranea
+    public function categoria(){
+      return $this->belongsTo('App\Categoria', 'ID_CATEGORIA');
+    }
 }
