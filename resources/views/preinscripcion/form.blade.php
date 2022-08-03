@@ -1,8 +1,8 @@
         <!-- DATOS HIJO -->
         <div class="form-group">
-            {{ Form::label('DOCUMENTO') }}
-            {{ Form::number('DOCUMENTO', $preinscripcion->DOCUMENTO, ['class' => 'form-control' . ($errors->has('DOCUMENTO') ? ' is-invalid' : ''), 'placeholder' => 'Cedula del hijo']) }}
-            {!! $errors->first('DOCUMENTO', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('ID_PREINSCRIPCION') }}
+            {{ Form::number('ID_PREINSCRIPCION', $preinscripcion->ID_PREINSCRIPCION, ['class' => 'form-control' . ($errors->has('ID_PREINSCRIPCION') ? ' is-invalid' : ''), 'placeholder' => 'Cedula del hijo']) }}
+            {!! $errors->first('ID_PREINSCRIPCION', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('NOMBRE_HIJO') }}

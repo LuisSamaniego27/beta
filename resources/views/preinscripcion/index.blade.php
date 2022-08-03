@@ -39,7 +39,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Cedula</th>
+										
 										<th>Nombre</th>
                                         <th>Apellido</th>
 
@@ -51,15 +51,15 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $preinscripcion->DOCUMENTO }}</td>
+											
 											<td>{{ $preinscripcion->NOMBRE_HIJO }}</td>
                                             <td>{{ $preinscripcion->APELLIDO_HIJO }}</td>
 
                                             <td>
-                                                <form action="{{ route('preinscripciones.destroy',$preinscripcion->DOCUMENTO) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.show',$preinscripcion->DOCUMENTO) }}"><i class="fa fa-fw fa-eye"></i> Detalle</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('preinscripciones.edit',$preinscripcion->DOCUMENTO) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.show',$preinscripcion->DOCUMENTO) }}"><i class="fa fa-fw fa-eye"></i> Inscribir</a>
+                                                <form action="{{ route('preinscripciones.destroy',$preinscripcion->ID_PREINSCRIPCION) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.show',$preinscripcion->ID_PREINSCRIPCION) }}"><i class="fa fa-fw fa-eye"></i> Detalle</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('preinscripciones.edit',$preinscripcion->ID_PREINSCRIPCION) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.show',$preinscripcion->ID_PREINSCRIPCION) }}"><i class="fa fa-fw fa-eye"></i> Inscribir</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>

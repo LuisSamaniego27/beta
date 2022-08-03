@@ -25,7 +25,7 @@ Route::resource('estados', App\Http\Controllers\EstadoController::class)->middle
 Route::resource('preinscripciones', App\Http\Controllers\PreinscripcionController::class)->middleware('auth');
 Route::resource('barrios', App\Http\Controllers\BarrioController::class)->middleware('auth');
 Route::resource('sociedades', App\Http\Controllers\SociedadController::class)->middleware('auth');
-
+Route::resource('personas', App\Http\Controllers\PersonaController::class)->middleware('auth');
 
 
 

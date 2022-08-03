@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Preinscripcion
+    Ingresar datos personales
 @endsection
 
 @section('content')
@@ -14,11 +14,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Preinscripcion') }}
+                                {{ __('Personas') }}
                             </span>
 
                             <div class="float-right">
-                                <a href="{{ route('preinscripciones.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('personas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Preinscribir') }}
                                 </a>
                             </div>
@@ -45,18 +45,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($preinscripciones as $preinscripcion)
+                                    @foreach ($personas as $persona)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $preinscripcion->DOCUMENTO }}</td>
-											<td>{{ $preinscripcion->NOMBRE_HIJO }}</td>
-                                            <td>{{ $preinscripcion->APELLIDO_HIJO }}</td>
+											<td>{{ $persona->DOCUMENTO}}</td>
+											<td>{{ $persona->NOMBRE_PERSONA }}</td>
+                                            <td>{{ $persona->APELLIDO_PERSONA }}</td>
 
                                             <td>
-                                                <form action="{{ route('preinscripciones.destroy',$preinscripcion->DOCUMENTO) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.show',$preinscripcion->DOCUMENTO) }}"><i class="fa fa-fw fa-eye"></i> Detalle</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('preinscripciones.edit',$preinscripcion->DOCUMENTO) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <form action="{{ route('personas.destroy',$persona->ID_PERSONA) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('personas.show',$persona->ID_PERSONA) }}"><i class="fa fa-fw fa-eye"></i> Detalle</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('personas.edit',$persona->ID_PERSONA) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Borrar</button>
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $preinscripciones->links() !!}    
+                {!! $personas->links() !!}    
 
             </div>
             
