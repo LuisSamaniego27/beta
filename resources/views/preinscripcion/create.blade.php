@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Preinscribir</span>
+                        <span class="card-title">Ingrese ubicacion para verificar capilla cercana a su zona</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('preinscripciones.store') }}"  role="form" enctype="multipart/form-data">

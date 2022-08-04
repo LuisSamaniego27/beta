@@ -1,51 +1,18 @@
         <!-- DATOS HIJO -->
         <div class="form-group">
-            {{ Form::label('ID_PREINSCRIPCION') }}
-            {{ Form::number('ID_PREINSCRIPCION', $preinscripcion->ID_PREINSCRIPCION, ['class' => 'form-control' . ($errors->has('ID_PREINSCRIPCION') ? ' is-invalid' : ''), 'placeholder' => 'Cedula del hijo']) }}
-            {!! $errors->first('ID_PREINSCRIPCION', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('ID_ETAPA') }}
+            {{ Form::number('ID_ETAPA', $preinscripcion->ID_ETAPA, ['class' => 'form-control' . ($errors->has('ID_ETAPA') ? ' is-invalid' : ''), 'placeholder' => 'Etapa a cursar']) }}
+            {!! $errors->first('ID_ETAPA', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('NOMBRE_HIJO') }}
-            {{ Form::text('NOMBRE_HIJO', $preinscripcion->NOMBRE_HIJO, ['class' => 'form-control' . ($errors->has('NOMBRE_HIJO') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
-            {!! $errors->first('NOMBRE_PAIS', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('ID_TIPO_SERVICIO') }}
+            {{ Form::text('ID_TIPO_SERVICIO', $preinscripcion->ID_TIPO_SERVICIO, ['class' => 'form-control' . ($errors->has('ID_TIPO_SERVICIO') ? ' is-invalid' : ''), 'placeholder' => 'Seleccionar sacramento a realizar']) }}
+            {!! $errors->first('ID_TIPO_SERVICIO', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-        <div class="form-group">
-            {{ Form::label('APELLIDO_HIJO') }}
-            {{ Form::text('APELLIDO_HIJO', $preinscripcion->APELLIDO_HIJO, ['class' => 'form-control' . ($errors->has('APELLIDO_HIJO') ? ' is-invalid' : ''), 'placeholder' => 'Apellido']) }}
-            {!! $errors->first('APELLIDO_HIJO', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('FECHA DE NACIMIENTO') }}
-            {{ Form::date('FECHA_NAC', $preinscripcion->FECHA_NAC, ['class' => 'form-control' . ($errors->has('FECHA_NAC') ? ' is-invalid' : ''), 'placeholder' => 'Apellido']) }}
-            {!! $errors->first('FECHA_NAC', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <!-- DATOS PADRE -->
-        <!-- <div class="form-group">
-            {{ Form::label('NOMBRE_PADRE') }}
-            {{ Form::text('NOMBRE_PADRE', $preinscripcion->NOMBRE_PADRE, ['class' => 'form-control' . ($errors->has('NOMBRE_PADRE') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
-            {!! $errors->first('NOMBRE_PAIS', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('APELLIDO_PADRE') }}
-            {{ Form::text('APELLIDO_PADRE', $preinscripcion->APELLIDO_PADRE, ['class' => 'form-control' . ($errors->has('APELLIDO_PADRE') ? ' is-invalid' : ''), 'placeholder' => 'Apellido']) }}
-            {!! $errors->first('APELLIDO_PADRE', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        
-        
-        <div class="form-group">
-            {{ Form::label('STATUS') }}
-            {{ Form::text('STATUS', $preinscripcion->STATUS, ['class' => 'form-control' . ($errors->has('STATUS') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
-            {!! $errors->first('STATUS', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-         -->
-
-         <a href="">Ingresar los datos del padre</a>
-         
-
          
         
         <!-- DATOS MAPA -->
-        <!-- <div class="row">
+        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="latitud">LATITUD</label>
@@ -68,9 +35,9 @@
                 <div id="map" style="width: 100%; height: 500px;"></div>
             </div>
         </div>
- -->
+
         <div class="box-footer mt20">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
                 </div>
             </div>
