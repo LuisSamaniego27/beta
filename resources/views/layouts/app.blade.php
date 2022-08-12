@@ -36,8 +36,8 @@
                     <!-- Left Side Of Navbar -->
                     @if (Auth::check())
                     <ul class="navbar-nav me-auto">
-                        <!-- <a class="nav-link" href="{{ route('paises.index') }}">{{ __('Paises') }}</a>
-                        <a class="nav-link" href="{{ route('estados.index') }}">{{ __('Estados') }}</a> -->
+                        <a class="nav-link" href="{{ route('paises.index') }}">{{ __('Paises') }}</a>
+                        <a class="nav-link" href="{{ route('estados.index') }}">{{ __('Estados') }}</a>
                         <!-- <a class="nav-link" href="{{ route('barrios.index') }}">{{ __('Barrios') }}</a>
                         <a class="nav-link" href="{{ route('sociedades.index') }}">{{ __('Sociedades') }}</a> -->
                         <a class="nav-link" href="{{ route('personas.index') }}">{{ __('Personas') }}</a>
