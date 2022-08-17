@@ -21,6 +21,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('paises', App\Http\Controllers\PaisController::class)->middleware('auth');
+//Route::get('/paises/{pais}', [App\Http\Controllers\PaisController::class, 'show'])->name('paises.show');
+
 Route::resource('estados', App\Http\Controllers\EstadoController::class)->middleware('auth');
 Route::resource('preinscripciones', App\Http\Controllers\PreinscripcionController::class)->middleware('auth');
 Route::resource('barrios', App\Http\Controllers\BarrioController::class)->middleware('auth');

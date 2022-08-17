@@ -25,6 +25,7 @@ class Ciudad extends Model
     public function estados(){
       return $this->belongsTo('App\Estado', 'ID_ESTADO');
   }
+  
   public function barrios(){
     return $this->hasMany(Barrio::class);
   }

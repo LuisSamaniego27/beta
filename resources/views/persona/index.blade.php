@@ -19,7 +19,7 @@
 
                             <div class="float-right">
                                 <a href="{{ route('personas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Boton de prueba preinscripcion') }}
+                                  {{ __('Crear') }}
                                 </a>
                             </div>
                         </div>

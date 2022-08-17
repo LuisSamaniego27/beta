@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Persona;
+use App\Models\Preinscipcion;
+use App\Models\Ciudad;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -10,7 +12,7 @@ class PersonaController extends Controller
 {
     public function index()
     {
-        $personas = Persona::paginate();
+        $personas = Persona::orderBy('ID_PERSONA', 'desc')->paginate();
 
         return view('persona.index', compact('personas'))
             ->with('i', (request()->input('page', 1) - 1) * $personas->perPage());
@@ -19,44 +21,55 @@ class PersonaController extends Controller
     public function create()
     {
         $persona = new Persona();
-        return view('persona.create', compact('persona'));
+        $ciudades = Ciudad::all();
+
+        return view('persona.create', compact('persona', 'ciudades'));
     }
 
     public function store(Request $request)
     {
-        request()->validate(Pais::$rules);
+        request()->validate(Persona::$rules);
 
-        //$pais = Pais::create($request->all());
-        $pais = new Pais();
-        $pais->NOMBRE_PAIS = $request->get('NOMBRE_PAIS');
-        $pais->STATUS = $request->get('STATUS');
+        $persona = new Persona();
+        $persona->DOCUMENTO = $request->get('DOCUMENTO');
+        $persona->NOMBRE_PERSONA = $request->get('NOMBRE_PERSONA');
+        $persona->APELLIDO_PERSONA = $request->get('APELLIDO_PERSONA');
+        $persona->SEXO = $request->get('SEXO');
+        $persona->FECHA_NACIMIENTO = $request->get('FECHA_NACIMIENTO');
+        $persona->ID_CIUDAD = $request->get('ID_CIUDAD');
+        $persona->ID_ATRIBUCION = 5;
+        $persona->TIPO_FISICO_JURIDICO = 1;
+        $persona->STATUS = 1;
         $date = Carbon::now();
         $date = $date->format('Ymd H:i:s');
-        $pais->DATETIME = $date;
-        $pais->save();
+        $persona->DATETIME = $date;
+        $persona->save();
 
-        return redirect()->route('paises.index')
-            ->with('success', 'Pais creada exitosamente');
+
+        return redirect()->route('personas.show', $persona->ID_PERSONA)
+            ->with('success', 'Persona creada exitosamente'); 
+
     }
 
     public function show($id)
     {
-        $pais = pais::find($id);
+        $persona = Persona::find($id);
+        $preincripcion = Preinscripcion::all();
 
-        return view('pais.show', compact('pais'));
+        return view('persona.show', compact('persona', 'preincripcion'));
     }
 
     public function edit($id)
     {
-        $pais = Pais::find($id);
+        $persona = Persona::find($id);
 
-        return view('pais.edit', compact('pais'));
+        return view('persona.edit', compact('persona'));
     }
 
    
     public function update(Request $request, $id)
     {
-        request()->validate(Pais::$rules);
+        request()->validate(Persona::$rules);
 
         //$pais->update($request->all());
 
@@ -71,9 +84,9 @@ class PersonaController extends Controller
 
     public function destroy($id)
     {
-        $pais = Pais::find($id)->delete();
+        $persona = Persona::find($id)->delete();
 
-        return redirect()->route('paises.index')
-            ->with('success', 'Pais eliminado con exito');
+        return redirect()->route('personas.index')
+            ->with('success', 'Persona eliminada con exito');
     }
 }

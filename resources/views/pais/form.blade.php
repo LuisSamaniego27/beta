@@ -14,7 +14,8 @@
 
     </div>
     <div class="box-footer mt20">
-    <a href="{{ route('paises.index') }}" class="btn btn-secondary" tabindex="2">Cancelar</a>
+        <a href="{{ route('paises.index') }}" class="btn btn-secondary" tabindex="2">Cancelar</a>
         <button type="submit" class="btn btn-primary" tabindex="3">Guardar</button>
+
     </div>
 </div>

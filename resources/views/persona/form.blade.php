@@ -1,4 +1,5 @@
-        <!-- DATOS PERSONA -->
+<div class="box box-info padding-1">
+    <div class="box-body">
         <div class="form-group">
             {{ Form::label('CEDULA') }}
             {{ Form::text('DOCUMENTO', $persona->DOCUMENTO, ['class' => 'form-control' . ($errors->has('DOCUMENTO') ? ' is-invalid' : ''), 'placeholder' => 'Ingrese su número de cédula']) }}
@@ -19,9 +20,11 @@
 
         <div class="form-group">
             {{ Form::label('SEXO') }}
-            {{ Form::text('SEXO', $persona->SEXO, ['class' => 'form-control' . ($errors->has('SEXO') ? ' is-invalid' : ''), 'placeholder' => 'Seleccione su sexo']) }}
-            {!! $errors->first('SEXO', '<div class="invalid-feedback">:message</div>') !!}
-        </div><!-- HACER UNCOMBO BOX PARA SEXO -->
+            <select id="SEXO" name="SEXO" class="form-control" > 
+                    <option value="MASCULINO" selected>MASCULINO</option>    
+                    <option value="FEMENINO" selected>FEMENINO</option>  
+                </select>
+        </div>
 
         <div class="form-group">
             {{ Form::label('FECHA DE NACIMIENTO') }}
@@ -30,18 +33,32 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('CIUDAD') }}
-            {{ Form::text('ID_CIUDAD', $persona->ID_CIUDAD, ['class' => 'form-control' . ($errors->has('ID_CIUDAD') ? ' is-invalid' : ''), 'placeholder' => 'Ciudad de residencia']) }}
-            {!! $errors->first('ID_CIUDAD', '<div class="invalid-feedback">:message</div>') !!}
-        </div><!-- HACER UNCOMBO BOX PARA CIUDAD -->
-        
-        
-        <div class="box-footer mt20">
-                <button type="submit" class="btn btn-primary">Preinscribir</button>
-        </div>
-                </div>
+            {{ Form::label('CIUDAD DE RESIDENCIA') }}
+            <div class="col-auto">
+                <select id="ID_CIUDAD" name="ID_CIUDAD" class="form-control" > 
+                    @foreach($ciudades as $ciudad)
+                                <option value="{{$ciudad->ID_CIUDAD}}" selected>{{$ciudad->NOMBRE_CIUDAD}}</option>
+                    @endforeach   
+                </select>
             </div>
         </div>
+
+        <div class="form-group">
+            {{ Form::label('STATUS') }}
+            {{ Form::text('STATUS', $persona->STATUS, ['class' => 'form-control' . ($errors->has('STATUS') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
+            {!! $errors->first('STATUS', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+    </div>
+        
+    <div class="box-footer mt20">
+        <a href="{{ route('personas.index') }}" class="btn btn-secondary" tabindex="2">Cancelar</a>
+        <button type="submit" class="btn btn-primary" tabindex="3">Guardar</button>            
+    </div>
+
+</div>
+
+        
+    
 
 
         
