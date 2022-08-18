@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="card-body">
-                        <a class="btn btn-sm btn-primary " href="{{ route('persona.create',$persona->ID_PERSONA) }}"><i class="fa fa-fw fa-eye"></i> Completar preinscripcion</a>
+                        <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.create',$persona->ID_PERSONA) }}"><i class="fa fa-fw fa-eye"></i> Completar preinscripcion</a>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Preinscripcion;
+use App\Models\Persona;
+use App\Models\Etapa;
+use App\Models\Ciudad;
+use App\Models\TipoServicio;
 use App\Models\Pais;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -22,7 +26,11 @@ class PreinscripcionController extends Controller
     public function create()
     {
         $preinscripcion = new Preinscripcion();
-        return view('preinscripcion.create', compact('preinscripcion'));
+        $etapas = Etapa::all();
+        $tiposservicios = TipoServicio::all();
+        $ciudades = Ciudad::all();
+        
+        return view('preinscripcion.create', compact('preinscripcion', 'etapas', 'tiposservicios', 'ciudades'));
     }
 
     public function store(Request $request)

@@ -1,13 +1,25 @@
         <!-- DATOS HIJO -->
+        
         <div class="form-group">
             {{ Form::label('ID_ETAPA') }}
-            {{ Form::number('ID_ETAPA', $preinscripcion->ID_ETAPA, ['class' => 'form-control' . ($errors->has('ID_ETAPA') ? ' is-invalid' : ''), 'placeholder' => 'Etapa a cursar']) }}
-            {!! $errors->first('ID_ETAPA', '<div class="invalid-feedback">:message</div>') !!}
+            <div class="col-auto">
+                <select id="ID_ETAPA" name="ID_ETAPA" class="form-control" > 
+                    @foreach($etapas as $etapa)
+                                <option value="{{$etapa->ID_ETAPA}}" selected>{{$etapa->NOMBRE_ETAPA}}</option>
+                    @endforeach   
+                </select>
+            </div>
         </div>
+
         <div class="form-group">
             {{ Form::label('ID_TIPO_SERVICIO') }}
-            {{ Form::text('ID_TIPO_SERVICIO', $preinscripcion->ID_TIPO_SERVICIO, ['class' => 'form-control' . ($errors->has('ID_TIPO_SERVICIO') ? ' is-invalid' : ''), 'placeholder' => 'Seleccionar sacramento a realizar']) }}
-            {!! $errors->first('ID_TIPO_SERVICIO', '<div class="invalid-feedback">:message</div>') !!}
+            <div class="col-auto">
+                <select id="ID_TIPO_SERVICIO" name="ID_TIPO_SERVICIO" class="form-control" > 
+                        @foreach($tiposservicios as $tiposervicio)
+                                    <option value="{{$tiposervicio->ID_TIPO_SERVICIO}}" selected>{{$tiposervicio->TIPO_SERVICIO}}</option>
+                        @endforeach   
+                </select>
+            </div>    
         </div>
          
         

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Persona;
-use App\Models\Preinscipcion;
+use App\Models\Preinscripcion;
 use App\Models\Ciudad;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -22,8 +22,9 @@ class PersonaController extends Controller
     {
         $persona = new Persona();
         $ciudades = Ciudad::all();
+        $preinscripciones = new Preinscripcion();
 
-        return view('persona.create', compact('persona', 'ciudades'));
+        return view('persona.create', compact('persona', 'ciudades', 'preinscripciones'));
     }
 
     public function store(Request $request)
