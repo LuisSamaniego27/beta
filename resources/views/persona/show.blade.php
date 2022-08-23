@@ -28,19 +28,34 @@
                         
                         <div class="form-group">
                             <strong>Nombre:</strong>
-                            {{ $persona->NOMBRE_PERSONA }}
+                            {{ $persona->NOMBRE_PERSONA }} {{ $persona->APELLIDO_PERSONA }}
                         </div>
+                        
+
                         <div class="form-group">
-                            <strong>Estado:</strong>
-                            {{ $persona->STATUS }}
+                            
+                         @foreach($preincripciones as $pre)
+                        
+                            @if ($persona->ID_PERSONA == $pre->ID_PER_PERSONA)
+                                <strong>LATITUD:</strong>
+                                {{ $pre->LATITUD }}
+                                <strong>LONGITUD:</strong>
+                                {{ $pre->LONGITUD }}
+                                @break
+                            @endif
+                        
+                        @endforeach   
                         </div>
+                       
 
 
                     </div>
 
                     <div class="card-body">
-                        <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.create',$persona->ID_PERSONA) }}"><i class="fa fa-fw fa-eye"></i> Completar preinscripcion</a>
+                        <a class="btn btn-sm btn-primary " href="{{ route('preinscripciones.crearpersona',$persona->ID_PERSONA) }}"><i class="fa fa-fw fa-eye"></i> Visualizar en que capilla se realizara el sacramento</a>
                     </div>
+
+                    
                 </div>
             </div>
         </div>

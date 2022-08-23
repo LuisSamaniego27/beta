@@ -29,6 +29,7 @@ Route::resource('barrios', App\Http\Controllers\BarrioController::class)->middle
 Route::resource('sociedades', App\Http\Controllers\SociedadController::class)->middleware('auth');
 Route::resource('personas', App\Http\Controllers\PersonaController::class)->middleware('auth');
 
+Route::get('/crearpersona/{id}', 'App\Http\Controllers\PreinscripcionController@crearpersona')->name('preinscripciones.crearpersona');
 
 
 Route::get('/mapa', function () {

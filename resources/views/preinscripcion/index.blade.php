@@ -40,8 +40,8 @@
                                         <th>No</th>
                                         
 										
-										<th>Nombre</th>
-                                        <th>Apellido</th>
+										<th>PERSONA</th>
+                                        <th>ETAPA</th>
 
                                         <th></th>
                                     </tr>
@@ -52,8 +52,8 @@
                                             <td>{{ ++$i }}</td>
                                             
 											
-											<td>{{ $preinscripcion->NOMBRE_HIJO }}</td>
-                                            <td>{{ $preinscripcion->APELLIDO_HIJO }}</td>
+											<td>{{ $preinscripcion->ID_PER_PERSONA }}</td>
+                                            <td>{{ $preinscripcion->ID_ETAPA }}</td>
 
                                             <td>
                                                 <form action="{{ route('preinscripciones.destroy',$preinscripcion->ID_PREINSCRIPCION) }}" method="POST">

@@ -25,6 +25,9 @@ class PreinscripcionController extends Controller
 
     public function create()
     {
+        
+        
+
         $preinscripcion = new Preinscripcion();
         $etapas = Etapa::all();
         $tiposservicios = TipoServicio::all();
@@ -33,7 +36,20 @@ class PreinscripcionController extends Controller
         return view('preinscripcion.create', compact('preinscripcion', 'etapas', 'tiposservicios', 'ciudades'));
     }
 
-    public function store(Request $request)
+    public function crearpersona($id)
+    {
+        $ids = $id;
+        
+        $preinscripcion = new Preinscripcion();
+        $etapas = Etapa::all();
+        $tiposservicios = TipoServicio::all();
+        $ciudades = Ciudad::all();
+        
+        return view('preinscripcion.create', compact('preinscripcion', 'etapas', 'tiposservicios', 'ciudades'));
+        
+    }
+
+    public function store(Request $request, $id)
     {
         request()->validate(Preinscripcion::$rules);
 

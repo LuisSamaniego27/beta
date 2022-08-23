@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Persona;
 use App\Models\Preinscripcion;
 use App\Models\Ciudad;
+use App\Models\Etapa;
+use App\Models\TipoServicio;
+use App\Models\Pais;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -21,10 +24,13 @@ class PersonaController extends Controller
     public function create()
     {
         $persona = new Persona();
+        $preinscripcion = new Preinscripcion();
+        $etapas = Etapa::all();
+        $tiposservicios = TipoServicio::all();
         $ciudades = Ciudad::all();
-        $preinscripciones = new Preinscripcion();
-
-        return view('persona.create', compact('persona', 'ciudades', 'preinscripciones'));
+        
+        return view('persona.create', compact('persona', 'preinscripcion', 'etapas', 'tiposservicios', 'ciudades'));
+       
     }
 
     public function store(Request $request)
@@ -47,6 +53,21 @@ class PersonaController extends Controller
         $persona->save();
 
 
+        $preincripcion = new Preinscripcion();
+        $preincripcion->ID_PREINSCRIPCION= $persona->ID_PERSONA;
+        $preincripcion->ID_PER_PERSONA= $persona->ID_PERSONA;
+        $preincripcion->LATITUD= $request->get('LATITUD');
+        $preincripcion->LONGITUD= $request->get('LONGITUD');
+        $preincripcion->ID_SOCIEDAD= $request->get('ID_SOCIEDAD');
+        $preincripcion->ID_ETAPA= $request->get('ID_ETAPA');
+        $preincripcion->ID_TIPO_SERVICIO= $request->get('ID_TIPO_SERVICIO');
+        
+        $date = Carbon::now();
+        $date = $date->format('Ymd H:i:s');
+        $preincripcion->DATETIME = $date;
+        $preincripcion->save();
+
+
         return redirect()->route('personas.show', $persona->ID_PERSONA)
             ->with('success', 'Persona creada exitosamente'); 
 
@@ -54,10 +75,11 @@ class PersonaController extends Controller
 
     public function show($id)
     {
-        $persona = Persona::find($id);
-        $preincripcion = Preinscripcion::all();
+        $persona= Persona::find($id);
+        $preincripciones = Preinscripcion::all();
+       
 
-        return view('persona.show', compact('persona', 'preincripcion'));
+        return view('persona.show', compact('persona', 'preincripciones'));
     }
 
     public function edit($id)
