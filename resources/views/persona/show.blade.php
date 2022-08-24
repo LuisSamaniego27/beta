@@ -27,27 +27,33 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Nombre:</strong>
-                            {{ $persona->NOMBRE_PERSONA }} {{ $persona->APELLIDO_PERSONA }}
+                            <h4>Datos Personales</h4>
+                            <strong>NOMBRE:</strong>
+                            {{ $persona->NOMBRE_PERSONA }} 
+                            <strong>APELLIDO:</strong>
+                            {{ $persona->APELLIDO_PERSONA }}
+                            <strong>CEDULA:</strong>
+                            {{ $persona->DOCUMENTO }}
+                            <strong>FECHA DE NACIMIENTO:</strong>
+                            {{ $persona->FECHA_NACIMIENTO }}
                         </div>
                         
 
                         <div class="form-group">
                             
-                         @foreach($preincripciones as $pre)
+                            @foreach($preincripciones as $pre)
                         
-                            @if ($persona->ID_PERSONA == $pre->ID_PER_PERSONA)
-                                <strong>LATITUD:</strong>
-                                {{ $pre->LATITUD }}
-                                <strong>LONGITUD:</strong>
-                                {{ $pre->LONGITUD }}
-                                @break
-                            @endif
-                        
-                        @endforeach   
-                        </div>
-                       
+                                @if ($persona->ID_PERSONA == $pre->ID_PER_PERSONA)
+                                    <strong>LATITUD:</strong>
+                                    {{ $pre->LATITUD }}
+                                    <strong>LONGITUD:</strong>
+                                    {{ $pre->LONGITUD }}
+                                    @break
+                                @endif
+                            
+                            @endforeach   
 
+                        </div>
 
                     </div>
 

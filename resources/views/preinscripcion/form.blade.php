@@ -1,59 +1,13 @@
-        <!-- DATOS HIJO -->
-        
-        <div class="form-group">
-            {{ Form::label('ID_ETAPA') }}
-            <div class="col-auto">
-                <select id="ID_ETAPA" name="ID_ETAPA" class="form-control" > 
-                    @foreach($etapas as $etapa)
-                                <option value="{{$etapa->ID_ETAPA}}" selected>{{$etapa->NOMBRE_ETAPA}}</option>
-                    @endforeach   
-                </select>
-            </div>
-        </div>
 
-        <div class="form-group">
-            {{ Form::label('ID_TIPO_SERVICIO') }}
-            <div class="col-auto">
-                <select id="ID_TIPO_SERVICIO" name="ID_TIPO_SERVICIO" class="form-control" > 
-                        @foreach($tiposservicios as $tiposervicio)
-                                    <option value="{{$tiposervicio->ID_TIPO_SERVICIO}}" selected>{{$tiposervicio->TIPO_SERVICIO}}</option>
-                        @endforeach   
-                </select>
-            </div>    
-        </div>
-         
-        
         <!-- DATOS MAPA -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="latitud">LATITUD</label>
-                    <input id="LATITUD" name="LATITUD" type="text"  class="form-control">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="longitud">LONGITUD</label>
-                    <input id="LONGITUD" name="LONGITUD" type="text" class="form-control">
-                </div>
-            </div>
-        </div>
-
+        
         <div class="row">
             <div class="col-md-12">
                 <div id="map" style="width: 100%; height: 500px;"></div>
             </div>
         </div>
 
-        <div class="box-footer mt20">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-                </div>
-            </div>
-        </div>
+        
 
 
         <!-- CODIGO EN JS -->

@@ -71,6 +71,11 @@ class PreinscripcionController extends Controller
 
         /* CREAR CODIGO JS Y HACER LA COMPARACION */
 
+
+
+
+        
+
         /* REALIZA EL SELECT DE TODAS LAS CAPILLAS  */
 
         /* AGG ID_SOCIEDADES A LA TABLA PREISNCRIPCION */
